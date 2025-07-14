@@ -29,11 +29,17 @@ class BogieChecksheet(models.Model):
     lowerSpringSeat = models.CharField(max_length=50)
 
 class BMBCChecksheet(models.Model):
+    CONDITION_CHOICES = [
+    ('GOOD', 'Good'),
+    ('WORN_OUT', 'Worn Out'),
+    ('DAMAGED', 'Damaged'),
+    ('OTHER', 'Other'),
+]
     form = models.OneToOneField(BogieForm, on_delete=models.CASCADE, related_name='bmbcChecksheet')
-    adjustingTube = models.CharField(max_length=50)
-    cylinderBody = models.CharField(max_length=50)
-    pistonTrunnion = models.CharField(max_length=50)
-    plungerSpring = models.CharField(max_length=50)
+    adjustingTube = models.CharField(max_length=50,choices=CONDITION_CHOICES, default='GOOD')
+    cylinderBody = models.CharField(max_length=50,choices=CONDITION_CHOICES, default='GOOD')
+    pistonTrunnion = models.CharField(max_length=50,choices=CONDITION_CHOICES, default='GOOD')
+    plungerSpring = models.CharField(max_length=50,choices=CONDITION_CHOICES, default='GOOD')
 
 
 # for WheelForm, WheelFields
