@@ -7,7 +7,7 @@ I used Django, Django REST Framework, and PostgreSQL to build and test this.
 
 ---
 
-## 🚀 Features
+##  Features
 
 - ✅ Submit **Bogie Checksheet** form (with nested sections)
 - ✅ Submit and get **Wheel Specification** forms
@@ -31,7 +31,7 @@ I used Django, Django REST Framework, and PostgreSQL to build and test this.
 
 ---
 
-## 📁 Folder Structure
+##  Folder Structure
 
 ```
 kpa_project-main/
@@ -174,31 +174,16 @@ Returns filtered wheel specification records.
 
 ---
 
-## ✅ Postman Testing
+##  Postman Testing
 
 I used Postman to test all APIs.  
 You can import the collection from:
 
-📁 `postman/KPA_form data.postman_collection.json`
+ `postman/KPA_form data.postman_collection.json`
 
 Just open Postman → Import → select this file → run the requests.
 
----
-
-## 🧠 What I Learned
-
-- How to create APIs using Django REST Framework
-- How to handle nested JSON data with serializers
-- How to use dropdown options with `choices`
-- How to use `.env` files for secure settings
-- How to test APIs with Postman
 
 ---
-
-## 🙏 Thank You
-
-Thank you for reviewing my project!  
-I am still learning and open to any suggestions or improvements.  
-Please let me know if something can be done better!
 
 — **Deepak Yadav**
