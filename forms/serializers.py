@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from forms.models import *
-from forms.models import CONDITION_CHOICES
+
 
 
 # Bogie Serializers 
@@ -15,10 +15,10 @@ class BogieChecksheetSerializer(serializers.ModelSerializer):
         exclude = ['form']
 
 class BMBCChecksheetSerializer(serializers.ModelSerializer):
-    adjustingTube = serializers.ChoiceField(choices=CONDITION_CHOICES)
-    cylinderBody = serializers.ChoiceField(choices=CONDITION_CHOICES)
-    pistonTrunnion = serializers.ChoiceField(choices=CONDITION_CHOICES)
-    plungerSpring = serializers.ChoiceField(choices=CONDITION_CHOICES)
+    adjustingTube = serializers.CharField()
+    cylinderBody = serializers.CharField()
+    pistonTrunnion = serializers.CharField()
+    plungerSpring = serializers.CharField()
 
     class Meta:
         model = BMBCChecksheet
@@ -47,11 +47,6 @@ class BogieFormSerializer(serializers.ModelSerializer):
 
         return form
     
-    def validate_inspection_by(self, value):
-        if not value.strip():
-            raise serializers.ValidationError("inspection_by cannot be empty.")
-        return value
-
 
 # Wheel Serializers
 class WheelFieldsSerializer(serializers.ModelSerializer):

@@ -5,7 +5,7 @@ from django.utils import timezone
 
 class BogieForm(models.Model):
     formNumber = models.CharField(max_length=50)
-    inspection_by = models.CharField(max_length=100, null=False, blank=False)
+    inspection_by = models.CharField(max_length=100)
     inspection_date = models.DateField(default=timezone.now) 
 
     def __str__(self):
